@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <title>Cambiar color de fondo automaticamente</title>
+</head>
+<body>
+
+  <p>El fondo cambiara automaticamente al cargar la pagina.</p>
+
+<script>
+    window.onload = function() {
+
+      let colores = ["lightblue", "lightgreen"];
+
+      let colorElegido = colores[Math.floor(Math.random() * 2)];
+      document.body.style.backgroundColor = colorElegido;
+    }
+  </script>
+
+</body>
+</html>

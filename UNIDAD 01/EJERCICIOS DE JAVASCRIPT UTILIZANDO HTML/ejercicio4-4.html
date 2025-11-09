@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <title>Mostrar alerta con contenido de un elemento</title>
+</head>
+<body>
+    <p id="miParrafo">Este es el texto de prueba</p>
+  <button onclick="mostrarAlerta()">Mostrar alerta</button>
+
+  <script>
+    function mostrarAlerta() {
+      let texto = document.getElementById("miParrafo").innerText;
+      alert(texto);
+    }
+  </script>
+
+</body>
+</html>
+
+
+
