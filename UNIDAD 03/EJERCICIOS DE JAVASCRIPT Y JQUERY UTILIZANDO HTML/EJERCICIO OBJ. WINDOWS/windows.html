@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos y Objetos Windows</title>
+</head>
+<body>
+    <h1>Métodos y Objetos Windows</h1>
+    
+    <button onclick="abrirVentana()">Abrir ventana</button>
+    <button onclick="cerrarVentana()">Cerrar ventana</button><br><br>
+    <button onclick="enfocarVentana()">Enfocar ventana</button>
+    <button onclick="desenfocarVentana()">Desenfocar ventana</button><br><br>
+    <button onclick="mostrarAlerta()">Mostrar alerta</button>
+    <button onclick="pedirNombre()">Pedir nombre</button><br><br>
+    <button onclick="moverPor()">MoveBy</button>
+    <button onclick="moverA()">MoveTo</button><br><br>
+
+    <script>
+     let miVentana;
+
+    //Abrir Ventana
+
+    function abrirVentana() {
+     miVentana = window.open(
+        "https://www.fp-informatica.com/?gad_source=1&gad_campaignid=22757866554&gbraid=0AAAAAD_EyCDgwYWdISsIg2GF7wsq6NTXt&gclid=CjwKCAjwu9fHBhAWEiwAzGRC_8EYHX8loMkiMurM_25oNynV9Yde1iucHe3QDb-YYDNtR3_Z-bGIjxoCe9AQAvD_BwE",
+        "MiVentana",
+        "width=500, height=400,menubar=yes,scrollbars=yes,toolbar=no,status=yes,location=no"
+
+    );
+    }
+
+    //Cerrar ventana
+
+    function cerrarVentana(){
+        if (miVentana && !miVentana.closed) {
+        miVentana.close();
+    }else {
+        alert("La ventana no se ha abierto, sigue cerrada")
+    }
+}
+
+
+    //Enfocar ventana
+
+    function enfocarVentana(){
+        if (miVentana && !miVentana.closed){
+            miVentana.focus();
+        }else {
+            alert("No se enfoca ninguna ventana a la que hay que enfocar");
+        }
+    }
+
+    //Desenfocar ventana
+
+    function desenfocarVentana(){
+        if (miVentana && !miVentana.closed){
+            miVentana.blur();
+            alert("Ventana desenfocada");
+        }else {
+            alert("No hay ventana que desenfocar");
+        }
+    }
+
+    //Mostrar alerta
+
+    function mostrarAlerta(){
+       window.alert("Esto es una alerta del objeto window");
+
+    }
+    
+
+    //Pedir nombre
+
+    function pedirNombre(){
+        const nombre = window.prompt("¿Cómo te llamas?");
+        if (nombre){
+            alert("Hola " +nombre);
+        }
+    }
+
+
+    //MoveBy
+
+    function moverPor(){
+        if (miVentana && !miVentana.closed){
+            miVentana.moveBy(50,50);
+        }else {
+            alert("No hay ninguna ventana que mover");
+        }
+    }
+
+
+    //MoveTo
+
+    function moverA(){
+        if( miVentana && !miVentana.closed){
+            miVentana.moveTo(100,100);
+        }else{
+            alert("No hay ninguna ventana que mover");
+    }
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactuar con el Objeto document</title>
+</head>
+<body>
+  <h2>Lista dinámica</h2>
+  <ul id="miLista">
+    <li>Elemento 1</li>
+  </ul>
+  <button onclick="agregarElemento()">Agregar elemento</button>
+
+  <script>
+    function agregarElemento() {
+      let texto = prompt("Escribe el texto del nuevo elemento:");
+      if (texto) {
+        let nuevo = document.createElement("li");
+        nuevo.textContent = texto;
+        document.getElementById("miLista").appendChild(nuevo);
+      }
+    }
+  </script>
+</body>
+</html>

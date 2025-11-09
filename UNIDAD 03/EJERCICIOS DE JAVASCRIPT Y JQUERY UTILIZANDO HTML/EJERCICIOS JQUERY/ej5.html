@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cambiar colores con 3 botones</title>
+</head>
+<body>
+  <h1>Elija uno de estos 3 botones</h1>
+    <button id="btnGranate" class="btn-color">Granate</button>
+  <button id="btnRosa" class="btn-color">Rosa</button>
+  <button id="btnGris" class="btn-color">Gris</button>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+        $(document).ready(function() {
+      $('#btnGranate').on('click', function() {
+        $('body').css('background-color', '#3b0808');
+      });
+      $('#btnRosa').on('click', function() {
+        $('body').css('background-color', '#ea899a');
+      });
+      $('#btnGris').on('click', function() {
+        $('body').css('background-color', '#808080');
+      });
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diferencia entre fechas</title>
+</head>
+<body>
+    <h1>Diferencia entre fechas</h1>
+    <script>
+
+       
+        let dia = fechaActual.getDate().toString().padStart(2, "0");
+        let mes = (fechaActual.getMonth() + 1).toString().padStart(2, "0");
+        let año = fechaActual.getFullYear();
+        let hora = fechaActual.getHours().toString().padStart(2, "0");
+        let min = fechaActual.getMinutes().toString().padStart(2, "0");
+        let seg = fechaActual.getSeconds().toString().padStart(2, "0");
+
+        console.log(`${dia}/${mes}/${año} - ${hora}:${min}:${seg}`);
+
+
+    </script>
+</body>
+</html>

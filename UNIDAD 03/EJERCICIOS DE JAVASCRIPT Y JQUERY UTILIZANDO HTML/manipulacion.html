@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Manipulación del Objeto window</title>
+</head>
+<body>
+  <h2>Manipulación del Objeto window</h2>
+  <button onclick="abrirVentana()">Abrir ventana</button>
+  <button onclick="cerrarVentana()">Cerrar ventana</button>
+
+  <script>
+    let miVentana;
+
+    function abrirVentana() {
+      miVentana = window.open("", "ventana nueva", "width=300,height=200");
+      miVentana.document.write("<h3>Ventana abierta</h3>");
+    }
+
+    function cerrarVentana() {
+      if (miVentana && !miVentana.closed) {
+        let confirmar = confirm("¿Quieres cerrar la ventana?");
+        if (confirmar) miVentana.close();
+      }
+    }
+  </script>
+</body>
+</html>
