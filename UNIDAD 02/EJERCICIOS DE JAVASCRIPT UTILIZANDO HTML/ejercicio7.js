@@ -1,0 +1,15 @@
+//7 Operadores booleanos
+const edad = 22;
+const pssword = "1234";
+
+const edadValida = edad >= 18 && edad <=65;
+const psswordValida = pssword.length >= 8;
+
+console.log("Edad Válida:", edadValida);
+console.log("Contraseña Válida:", psswordValida);
+
+if (edadValida && psswordValida) {
+    console.log("Las condiciones son verdaderas");
+} else {
+    console.log("Las condiciones no se cumplen");
+}
