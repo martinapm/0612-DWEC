@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Información sobre la URL con location</title>
+</head>
+<body>
+  <h2>Información sobre la URL con location</h2>
+  <div id="datos"></div>
+  <button onclick="redirigir()">Ir a otra página</button>
+
+  <script>
+    let loc = location;
+    document.getElementById("datos").innerHTML = `
+      <p><strong>URL completa:</strong> ${loc.href}</p>
+      <p><strong>Protocolo:</strong> ${loc.protocol}</p>
+      <p><strong>Host:</strong> ${loc.hostname}</p>
+      <p><strong>Ruta:</strong> ${loc.pathname}</p>
+      <p><strong>Parámetros:</strong> ${loc.search}</p>
+      <p><strong>Hash:</strong> ${loc.hash}</p>
+    `;
+
+    function redirigir() {
+      location.assign("https://www.google.com");
+    }
+  </script>
+</body>
+</html>

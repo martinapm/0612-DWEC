@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formato personalizado</title>
+</head>
+<body>
+    <h1>Formato personalizado de fecha</h1>
+    <script>
+
+
+    let hoy = new Date();
+    let finAño = new Date(hoy.getFullYear(), 11, 31);
+
+    let diferencia = finAño - hoy;
+    let diasRestantes = Math.ceil(diferencia / (1000 * 60 * 60 * 24));
+
+    console.log("Días hasta fin de año:", diasRestantes);
+
+
+    </script>
+</body>
+</html>

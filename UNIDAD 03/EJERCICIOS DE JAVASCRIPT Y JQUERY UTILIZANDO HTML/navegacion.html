@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Navegación en el Historial con history</title>
+</head>
+<body>
+  <h2>Navegación en el Historial con history</h2>
+  <button onclick="atras()">Atrás</button>
+  <button onclick="adelante()">Adelante</button>
+  <p>Longitud del historial: <span id="longitud"></span></p>
+
+  <script>
+    document.getElementById("longitud").textContent = history.length;
+
+    function atras() {
+      history.back();
+    }
+
+    function adelante() {
+      history.forward();
+    }
+  </script>
+</body>
+</html>
