@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Habilitar boton al cargar</title>
+</head>
+<body>
+
+  <button id="miBoton" disabled onclick="alert('Este boton habilita el cargar')">Clic aqui</button>
+
+  <script>
+    window.onload = function() {
+
+      document.getElementById("miBoton").disabled = false;
+    }
+  </script>
+
+</body>
+</html>
