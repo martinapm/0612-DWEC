@@ -1,0 +1,12 @@
+
+JavaScript es clave para el frontend porque nos permite crear webs dinámicas y con interacción, que reaccionan cuando el usuario hace algo.
+
+Lo bueno de JavaScript:
+
+- Funciona directamente en el navegador, sin tener que instalar nada extra.
+- Funciona en todos los navegadores, así que no hay problema de compatibilidad.
+- Tiene un montón de librerías y frameworks (como React o Vue) que facilitan el trabajo.
+- Con un mismo lenguaje puedes programar tanto la parte del cliente como la del servidor (con Node.js).
+
+Cómo funciona con el DOM:
+JavaScript puede manipular el DOM, es decir, puede cambiar el contenido de una página, los estilos, o incluso añadir elementos nuevos al momento, según lo que haga el usuario.
