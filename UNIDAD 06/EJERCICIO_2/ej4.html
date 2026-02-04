@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prueba DOM</title>
+</head>
+<body>
+  <h1>Título principal</h1>
+  <p>Párrafo</p>
+  <p>Hola mundo</p>
+
+<script>
+  const p = document.body.childNodes[1];
+  const texto = p.firstChild;
+
+  console.log(texto.nodeValue);
+
+  texto.nodeValue = "Texto modificado desde JS";
+</script>
+
+</body>
+</html>

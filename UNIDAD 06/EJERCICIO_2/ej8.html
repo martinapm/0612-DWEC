@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prueba DOM</title>
+</head>
+<body>
+  <h1>Título principal</h1>
+  <p>Párrafo</p>
+
+  <script>
+
+    const nodos = document.body.childNodes;
+    
+    for (let i = 0; i < nodos.length; i++) {
+      const nodo = nodos[i];
+      let tipo = nodo.nodeType === 1 ? 'Elemento' : 'Texto';
+      
+      console.log('---');
+      console.log('nodeName: ' + nodo.nodeName);
+      console.log('nodeType: ' + nodo.nodeType);
+      console.log('Tipo: ' + tipo);
+    }
+  </script>
+</body>
+</html>

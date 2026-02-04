@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prueba DOM</title>
+</head>
+<body>
+  <h1>Título principal</h1>
+  <p>Párrafo</p>
+   <ul>
+       <li>Uno</li>
+       <li>Dos</li>
+       <li>Tres</li>
+</ul>
+
+<script>
+  const ul = document.querySelector('ul');
+
+  const primerLi = ul.children[0];
+
+  const segundoLi = primerLi.nextElementSibling;
+  console.log(segundoLi.textContent);
+
+  const ultimoLi = segundoLi.nextElementSibling;
+  console.log(ultimoLi.textContent);
+</script>
+</body>
+</html>

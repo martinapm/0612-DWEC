@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prueba DOM</title>
+</head>
+<body>
+  <h1>Título principal</h1>
+  <p>Párrafo</p>
+    <div>  Hola <span>Mundo</span>
+</div>
+
+<script>
+  const div = document.body.childNodes[1];
+  let contador = 0;
+
+  div.childNodes.forEach(nodo => {
+    if (nodo.nodeType === 3) {
+      contador++;
+    }
+  });
+
+  console.log("Nodos de texto:", contador);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prueba DOM</title>
+</head>
+<body>
+  <h1>Título principal</h1>
+  <p>Párrafo</p>
+  <div>
+  <section>
+    <p>Texto</p>
+  </section>
+</div>
+
+<script>
+
+  const p = document.body.childNodes[5].childNodes[1].childNodes[1];
+
+  console.log(p.parentNode.nodeName);
+
+  console.log(p.parentNode.parentNode.nodeName);
+
+  p.parentNode.style.color = "red";
+</script>
+</body>
+</html>
