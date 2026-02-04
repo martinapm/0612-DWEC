@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Trabajando con arrays</h1>
+    <p id="pares"></p>
+    <p id="impares"></p>
+    <p>Martina Pérez Muñoz | 78003602E</p>
+
+    <script>
+        function esEntero(n) {
+            return Number.isInteger(n) && n > 0;
+        }
+
+        let N;
+        do {
+            N = Number(prompt("Introduzca el tamaño de la array "));
+            if (!esEntero(N)) alert("Error. No puede estar vacío");
+        } while (!esEntero(N));
+
+        let numeros = [];
+        for (let a = 0; a < N; a++) {
+            let num;
+            do {
+                num = Number(prompt("Introduzca un número positivo: "));
+                if (!esEntero(num)) alert("Error. Tiene que ser un número positivo");
+            } while (!esEntero(num));
+            numeros.push(num);
+        }
+
+
+        numeros.sort((a, b) => a - b);
+
+        let pares = numeros.filter(n => n % 2 === 0).sort((a, b) => a - b);
+
+        let impares = numeros.filter(n => n % 2 !== 0).sort((a, b) => a - b);
+
+        document.getElementById("pares").innerHTML = "Números pares: " + pares.join(", ");
+
+        document.getElementById("impares").innerHTML = "Números impares: " + impares.join(", ");
+
+        // Mostrar nombre, apellidos y dni
+        let lastP = document.querySelector("p:last-of-type");
+        lastP.innerHTML = "Martina Pérez Muñoz | 78003602E";
+    </script>
+</body>
+</html>
