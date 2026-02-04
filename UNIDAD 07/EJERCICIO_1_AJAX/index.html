@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicios</h1>
+
+    <!-- ej1 -->
+    <h2>1. Cargar archivo TXT local</h2>
+    <button onclick="cargarTxt()">Cargar datos.txt</button>
+    <div id="resultado1"></div>
+
+    <!-- ej2 -->
+    <h2>2. Verificar servidor en linea</h2>
+    <button onclick="verificarServidor()">Verificar servidor</button>
+    <div id="resultado2"></div>
+
+    <!-- ej3 -->
+    <h2>3. Mostrar imagen desde API</h2>
+    <button onclick="cargarImagen()">Cargar imagen</button>
+    <div id="resultado3"></div>
+
+    <script>
+        // ej1 
+        function cargarTxt() {
+            // obtiene el elemento HTML donde mostrar el resultado
+            var resultado1 = document.getElementById('resultado1');
+            
+            // 2. Crear una solicitud HTTP
+            var xhr = new XMLHttpRequest();
+            
+            xhr.open('GET', 'datos.txt', true);
+            
+            xhr.onload = function() {
+                if (xhr.status == 200) {
+                    // muestra el contenido del archivo en la página
+                    resultado1.innerHTML = xhr.responseText;
+                }
+            };
+            
+            // envia la solicitud
+            xhr.send();
+        }
+
+        // ej2
+        function verificarServidor() {
+            // crea la solicitud HTTP
+            var xhr = new XMLHttpRequest();
+            
+            // abre la conexión a una API externa
+            xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/1', true);
+            
+            xhr.onload = function() {
+                if (xhr.status == 200) {
+                    document.getElementById('resultado2').innerHTML = 'Servidor en linea';
+                } else {
+                    document.getElementById('resultado2').innerHTML = 'Servidor fuera de servicio';
+                }
+            };
+            
+            // envia la solicitud
+            xhr.send();
+        }
+
+        //ej3 
+        function cargarImagen() {
+            // crea la solicitud HTTP
+            var xhr = new XMLHttpRequest();
+            
+            // pide datos a una API externa
+            xhr.open('GET', 'https://jsonplaceholder.typicode.com/photos/1', true);
+            
+            xhr.onload = function() {
+                if (xhr.status == 200) {
+                    // convierte el texto JSON en un objeto JavaScript
+                    var respuesta = JSON.parse(xhr.responseText);
+                    
+                    // extrae la URL de la imagen del objeto
+                    var urlImagen = respuesta.url;
+                    
+                    // muestra la imagen en la página
+                    document.getElementById('resultado3').innerHTML = 
+                        '<img src="' + urlImagen + '" width="200">';
+                }
+            };
+            
+            //envia la solicitud
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Eliminar post</title>
+</head>
+<body>
+
+<button onclick="eliminarPost()">Eliminar post</button>
+
+<script>
+function eliminarPost() {
+  let xhr = new XMLHttpRequest();
+
+  xhr.open("DELETE", "https://jsonplaceholder.typicode.com/posts/1", true);
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      console.log("Post eliminado correctamente");
+    }
+  };
+
+  xhr.send();
+}
+</script>
+
+</body>
+</html>

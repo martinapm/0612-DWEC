@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de usuarios</title>
+</head>
+<body>
+
+<button onclick="cargarUsuarios()">Cargar usuarios</button>
+<ul id="listaUsuarios"></ul>
+
+<script>
+function cargarUsuarios() {
+  let xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://jsonplaceholder.typicode.com/users", true);
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      let usuarios = JSON.parse(xhr.responseText);
+      let lista = document.getElementById("listaUsuarios");
+      lista.innerHTML = "";
+
+      usuarios.forEach(usuario => {
+        let li = document.createElement("li");
+        li.textContent = usuario.name;
+        lista.appendChild(li);
+      });
+    }
+  };
+
+  xhr.send();
+}
+</script>
+
+</body>
+</html>

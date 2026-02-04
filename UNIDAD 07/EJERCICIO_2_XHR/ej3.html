@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Usuario</title>
+</head>
+<body>
+
+<button onclick="obtenerUsuario()">Cargar usuario</button>
+<p id="resultado"></p>
+
+<script>
+function obtenerUsuario() {
+  let xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://jsonplaceholder.typicode.com/users/1", true);
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      let usuario = JSON.parse(xhr.responseText);
+      document.getElementById("resultado").innerHTML =
+        "Nombre: " + usuario.name + "<br>Email: " + usuario.email;
+    }
+  };
+
+  xhr.send();
+}
+</script>
+
+</body>
+</html>
