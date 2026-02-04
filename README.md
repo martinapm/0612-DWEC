@@ -41,6 +41,31 @@ Este repositorio incluye materiales correspondientes a las siguientes unidades:
 - Creación de efectos y animaciones básicas.  
 - Comparativa entre JavaScript nativo y jQuery.
 
+## 🔧 Unidad 04 – Funciones y métodos definidos por el lenguaje
+- Definición y llamada de funciones, manejo de parámetros.
+- Entendimiento del ámbito de las variables y uso de funciones anidadas.
+- Introducción a arreglos (arrays) y estructuras de datos básicas.
+
+## 🖱️ Unidad 05 – Gestión de eventos y formularios
+- Tipos de eventos: ratón, teclado, HTML y DOM.
+- Modelos de registro de eventos: en línea, tradicional, W3C y Microsoft.
+- Estructura y elementos de formularios HTML.
+- Modificación de apariencia y comportamiento de formularios desde JavaScript.
+- Validación de formularios y uso de expresiones regulares (RegExp).
+
+## 🌳 Unidad 06 – Modelo de Objetos del Documento (DOM)
+- Estructura del árbol DOM y tipos de modelos DOM.
+- Objetos del modelo DOM: Node, Element, Document.
+- Creación, modificación y eliminación de elementos dinámicamente.
+- Técnicas cross-browser para compatibilidad entre navegadores.
+
+## 🔄 Unidad 07 – Utilización de mecanismos de comunicación asíncrona (AJAX)
+- Introducción a AJAX y comunicación asíncrona.
+- Uso del objeto XMLHttpRequest (XHR) y sus propiedades/métodos.
+- Formatos de intercambio de datos: JSON y XML.
+- Uso de jQuery para AJAX: métodos load(), $.get() y $.post().
+
+
 ---
 
 ## 🧰 Tecnologías y Herramientas Utilizadas
@@ -93,14 +118,26 @@ Para visualizar correctamente los ejercicios y su comportamiento en el navegador
 ```plaintext
 
 ├── Unidad_01/
-│ └── Ejercicios_JavaScript_HTML/
+│   └── Ejercicios_JavaScript_HTML/
 │
 ├── Unidad_02/
-│ └── Ejercicios_JavaScript_HTML/
+│   └── Ejercicios_JavaScript_HTML/
 │
-└── Unidad_03/
-├── Ejercicios_JavaScript_HTML/
-└── Ejercicios_jQuery/
+├── Unidad_03/
+│   ├── Ejercicios_JavaScript_HTML/
+│   └── Ejercicios_jQuery/
+│
+├── Unidad_04/
+│   └── Ejercicios_Arrays_Funciones_Objetos/
+│
+├── Unidad_05/
+│   └── Ejercicios_Eventos_Expresiones_Regulares/
+│
+├── Unidad_06/
+│   └── Ejercicios_DOM/
+│
+└── Unidad_07/
+    └── Ejercicios_AJAX_XHR/
 
 ```
 
@@ -125,3 +162,4 @@ Puedes usar, modificar y compartir el contenido citando la fuente original.
 <p align="center">
   ✨ <i>“MPM”</i> ✨
 </p>
+
