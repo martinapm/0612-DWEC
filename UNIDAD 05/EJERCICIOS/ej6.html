@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 6</title>
+
+    <style>
+        #contenedor {
+            width: 400px;
+            height: 300px;
+            border: 2px solid black;
+            position: relative;
+        }
+
+        #cuadro {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="contenedor">
+    <div id="cuadro"></div>
+</div>
+
+<p id="info">Información</p>
+
+<script>
+    let cuadro = document.getElementById("cuadro");
+    let contenedor = document.getElementById("contenedor");
+    let info = document.getElementById("info");
+
+    let x = 0;
+    let y = 0;
+    let tamaño = 50;
+
+    // mover el cuadro con el teclado
+    document.addEventListener("keydown", function(e) {
+
+        if (e.key === "ArrowRight" && x + 10 + 50 <= contenedor.offsetWidth) {
+            x += 10;
+        }
+        if (e.key === "ArrowLeft" && x - 10 >= 0) {
+            x -= 10;
+        }
+        if (e.key === "ArrowDown" && y + 10 + 50 <= contenedor.offsetHeight) {
+            y += 10;
+        }
+
+        if (e.key === "ArrowUp" && y - 10 >= 0) {
+            y -= 10;
+        }
+
+        cuadro.style.left = x + "px";
+        cuadro.style.top = y + "px";
+    });
+
+    // clic derecho para cambiar color
+    cuadro.addEventListener("contextmenu", function(e) {
+        e.preventDefault();
+
+        let color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        cuadro.style.backgroundColor = color;
+        info.textContent = "Color: " + color;
+    });
+
+    // movimiento del ratón
+    contenedor.addEventListener("mousemove", function(e) {
+        info.textContent = "X: " + e.offsetX + " Y: " + e.offsetY;
+    });
+    contenedor.addEventListener("mouseleave", function() {
+        info.textContent = "Coloca el ratón dentro del contenedor";
+    });
+</script>
+
+<script>
+    // tamaño del cuadrado
+    document.addEventListener("keydown", function(e) {
+
+        // aumentar tamaño con +
+        if (e.key === "+") {
+            if (tamaño + 10 <= contenedor.offsetWidth &&
+                tamaño + 10 <= contenedor.offsetHeight) {
+                tamaño += 10;
+            }
+        }
+
+        // reducir tamaño con -
+        if (e.key === "-") {
+            if (tamaño - 10 >= 10) {
+                tamaño -= 10;
+            }
+        }
+
+        cuadro.style.width = tamaño + "px";
+        cuadro.style.height = tamaño + "px";
+    });
+</script>
+
+<script>
+    // hacer clic en el contenedor
+    contenedor.addEventListener("click", function(e) {
+
+        //posición del ratón
+        x = e.offsetX - tamaño / 2;
+        y = e.offsetY - tamaño / 2;
+
+        // limitar dentro del contenedor
+        if (x < 0) x = 0;
+        if (y < 0) y = 0;
+        if (x + tamaño > contenedor.offsetWidth) x = contenedor.offsetWidth - tamaño;
+        if (y + tamaño > contenedor.offsetHeight) y = contenedor.offsetHeight - tamaño;
+
+        //animación simple
+        cuadro.style.transition = "all 8.0s";
+
+        cuadro.style.left = x + "px";
+        cuadro.style.top = y + "px";
+    });
+</script>
+</body>
+</html>

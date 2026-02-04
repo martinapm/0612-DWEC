@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10 - Imagen interactiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        #miImagen {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border: 3px solid #333;
+            border-radius: 10px;
+            transition: transform 0.3s, opacity 0.3s;
+            cursor: pointer;
+        }
+        .instrucciones {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 10: Imagen interactiva</h1>
+    <p class="instrucciones">Haz clic para cambiar tamaño, pasa el ratón para cambiar opacidad</p>
+    <img id="miImagen" src="/logo.png" alt="Logo">
+    
+    <script>
+        const imagen = document.getElementById('miImagen');
+        const tamañoOriginal = 1;
+        const opacidadOriginal = 1;
+        let tamañoActual = tamañoOriginal;
+        
+        imagen.addEventListener('click', function() {
+            if (tamañoActual === tamañoOriginal) {
+                imagen.style.transform = 'scale(1.5)';
+                tamañoActual = 1.5;
+            } else {
+                imagen.style.transform = 'scale(1)';
+                tamañoActual = tamañoOriginal;
+            }
+        });
+
+        imagen.addEventListener('mouseover', function() {
+            imagen.style.opacity = '0.7';
+        });
+        
+        imagen.addEventListener('mouseout', function() {
+            imagen.style.opacity = opacidadOriginal;
+        });
+    </script>
+</body>
+</html>

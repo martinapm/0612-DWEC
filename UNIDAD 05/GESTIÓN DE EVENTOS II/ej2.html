@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Cambiar color de fondo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        #cuadro {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin: 0 auto;
+            border: 2px solid #333;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+        .instrucciones {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 2: Cambiar el color de fondo</h1>
+    <p class="instrucciones">Pasa el ratón por encima del cuadro para cambiar su color</p>
+    <div id="cuadro"></div>
+    
+    <script>
+        const cuadro = document.getElementById('cuadro');
+        const colorOriginal = 'lightblue';
+        
+        cuadro.addEventListener('mouseover', function() {
+            const colores = ['#FF5733', '#33FF57', '#3357FF', '#F033FF', '#FF33A1', '#33FFF6'];
+            const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+            cuadro.style.backgroundColor = colorAleatorio;
+        });
+        
+        cuadro.addEventListener('mouseout', function() {
+            cuadro.style.backgroundColor = colorOriginal;
+        });
+    </script>
+</body>
+</html>

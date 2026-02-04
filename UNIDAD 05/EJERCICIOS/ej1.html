@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+
+    <style>
+        #contenedor {
+            width: 400px;
+            height: 300px;
+            border: 2px solid black;
+            position: relative;
+        }
+
+
+        #cuadro {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="contenedor">
+    <div id="cuadro"></div>
+</div>
+
+<script>
+    let cuadro = document.getElementById("cuadro");
+    let contenedor = document.getElementById("contenedor");
+
+
+    let x = 0;
+    let y = 0;
+
+    document.addEventListener("keydown", function(evento) {
+
+        //derecha
+        if (evento.key === "ArrowRight") {
+            if (x + 10 + 50 <= contenedor.offsetWidth) { 
+                x = x + 10;
+            }
+        }
+
+        //izquierda
+        if (evento.key === "ArrowLeft") {
+            if (x - 10 >= 0) {
+                x = x - 10;
+            }
+        }
+
+        //abajo
+        if (evento.key === "ArrowDown") {
+            if (y + 10 + 50 <= contenedor.offsetHeight) {
+                y = y + 10;
+            }
+        }
+
+        //arriba
+        if (evento.key === "ArrowUp") {
+            if (y - 10 >= 0) {
+                y = y - 10;
+            }
+        }
+
+        //aplicar la posición de los cuadrados
+        cuadro.style.left = x + "px";
+        cuadro.style.top = y + "px";
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13 - Control del volumen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .contenedor {
+            width: 300px;
+            margin: 30px auto;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        input[type="range"] {
+            width: 100%;
+            margin: 20px 0;
+        }
+        #valorVolumen {
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .etiqueta-volumen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 13: Control del volumen</h1>
+    <div class="contenedor">
+        <p>Control de volumen del reproductor</p>
+        <input type="range" id="controlVolumen" min="0" max="100" value="50">
+        <div class="etiqueta-volumen">
+            <span>Volumen:</span>
+            <span id="valorVolumen">50</span>
+        </div>
+    </div>
+    
+    <script>
+        const control = document.getElementById('controlVolumen');
+        const valor = document.getElementById('valorVolumen');
+
+        control.addEventListener('input', function() {
+            valor.textContent = this.value;
+        });
+    </script>
+</body>
+</html>

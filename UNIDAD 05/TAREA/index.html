@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Validar Formulario</title>
+
+<script>
+function validar(){
+
+let usuario = document.getElementById("usuario").value;
+let pass = document.getElementById("pass").value;
+
+if(usuario == ""){
+alert("El campo usuario está vacío");
+return false;
+}
+
+if(pass == ""){
+alert("El campo contraseña está vacío");
+return false;
+}
+
+alert("Formulario enviado correctamente");
+return true;
+}
+</script>
+</head>
+
+<body>
+
+<h1>Validar Formulario</h1>
+
+<hr><h3>Datos de identificación</h3>
+
+<form onsubmit="return validar()">
+
+Usuario:
+<input type="text" id="usuario"><br><br>
+
+Contraseña:
+<input type="password" id="pass"><br><br>
+
+<input type="submit" value="Enviar">
+
+</form>
+
+<hr><p>Validación de formulario realizado por: Martina Pérez Muñoz</p>
+
+</body>
+</html>

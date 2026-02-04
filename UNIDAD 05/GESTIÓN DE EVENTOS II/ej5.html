@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5 - Movimiento con las teclas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        #contenedor {
+            width: 500px;
+            height: 300px;
+            border: 3px solid #333;
+            margin: 20px auto;
+            position: relative;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+        #cuadro {
+            width: 50px;
+            height: 50px;
+            background-color: #FF5733;
+            position: absolute;
+            top: 125px;
+            left: 225px;
+            border-radius: 5px;
+        }
+        .instrucciones {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 5: Movimiento con las teclas</h1>
+    <p class="instrucciones">Usa las teclas de flecha para mover el cuadro rojo</p>
+    <div id="contenedor">
+        <div id="cuadro"></div>
+    </div>
+    
+    <script>
+        const cuadro = document.getElementById('cuadro');
+        const contenedor = document.getElementById('contenedor');
+        
+        let posX = 225;
+        let posY = 125;
+        
+        document.addEventListener('keydown', function(event) {
+            const tecla = event.key;
+            const paso = 10;
+            
+            const maxX = contenedor.offsetWidth - cuadro.offsetWidth;
+            const maxY = contenedor.offsetHeight - cuadro.offsetHeight;
+            
+
+            if (tecla === 'ArrowUp' && posY > 0) {
+                posY -= paso;
+            } else if (tecla === 'ArrowDown' && posY < maxY) {
+                posY += paso;
+            } else if (tecla === 'ArrowLeft' && posX > 0) {
+                posX -= paso;
+            } else if (tecla === 'ArrowRight' && posX < maxX) {
+                posX += paso;
+            }
+            
+            cuadro.style.left = `${posX}px`;
+            cuadro.style.top = `${posY}px`;
+        });
+    </script>
+</body>
+</html>

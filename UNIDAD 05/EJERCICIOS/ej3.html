@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3</title>
+
+    <style>
+        #contenedor {
+            width: 400px;
+            height: 300px;
+            border: 2px solid black;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<div id="contenedor"></div>
+<p id="mensaje">Mueve el ratón dentro del contenedor</p>
+
+<script>
+    let contenedor = document.getElementById("contenedor");
+    let mensaje = document.getElementById("mensaje");
+
+    // movimiento del ratón dentro del contenedor
+    contenedor.addEventListener("mousemove", function(e) {
+
+        // coordenadas del ratón
+        mensaje.textContent =
+            "X: " + e.offsetX + " | Y: " + e.offsetY;
+    });
+
+    // el ratón sale del contenedor
+
+    contenedor.addEventListener("mouseleave", function() {
+        mensaje.textContent = "Coloca el ratón dentro del contenedor";
+    });
+</script>
+
+</body>
+</html>

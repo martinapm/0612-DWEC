@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12 - Menú desplegable de colores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            transition: background-color 0.5s;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+        .instrucciones {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 12: Menú desplegable de colores</h1>
+    <p class="instrucciones">Selecciona un color para cambiar el fondo de la página</p>
+    <select id="selectorColor">
+        <option value="">Selecciona un color</option>
+        <option value="#ff0000">Rojo</option>
+        <option value="#0000ff">Azul</option>
+        <option value="#00ff00">Verde</option>
+        <option value="#ffff00">Amarillo</option>
+        <option value="#ff00ff">Magenta</option>
+        <option value="#00ffff">Cian</option>
+    </select>
+    
+    <script>
+        const selector = document.getElementById('selectorColor');
+        
+        selector.addEventListener('change', function() {
+            const colorSeleccionado = this.value;
+            if (colorSeleccionado) {
+                document.body.style.backgroundColor = colorSeleccionado;
+            } else {
+                document.body.style.backgroundColor = '';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Validar con expresiones regulares</title>
+
+<style>
+.caja{
+background:#f3e5f5;
+width:500px;
+padding:20px;
+border-radius:15px;
+}
+
+.error{
+color:red;
+font-weight:bold;
+}
+</style>
+
+<script>
+function validar(){
+
+// Recogemos los valores de los inputs
+let usuario = document.getElementById("usuario").value;
+let pass = document.getElementById("pass").value;
+
+// Recogemos los spans donde mostraremos errores
+let errorUsuario = document.getElementById("errorUsuario");
+let errorPass = document.getElementById("errorPass");
+
+// Expresiones regulares
+// Usuario: solo minúsculas, entre 3 y 12 letras
+let expUsuario = /^[a-z]{3,12}$/;
+
+// Contraseña: mayúscula + símbolo + 6 letras/números
+let expPass = /^[A-Z][\.,-][a-z0-9]{6}$/;
+
+// Limpiamos mensajes anteriores
+errorUsuario.innerHTML="";
+errorPass.innerHTML="";
+
+// Validación usuario
+
+// Comprobamos si está vacío
+if(usuario==""){
+errorUsuario.innerHTML="Este campo no puede estar vacío";
+return false;
+}
+
+// Comprobamos formato con expresión regular
+if(!expUsuario.test(usuario)){
+errorUsuario.innerHTML="Solo minúsculas entre 3 y 12 letras. Ej: martina";
+return false;
+}
+
+// Validar contraseña
+
+// Comprobamos si está vacía
+if(pass==""){
+errorPass.innerHTML="Este campo no puede estar vacío";
+return false;
+}
+
+// Comprobamos formato
+if(!expPass.test(pass)){
+errorPass.innerHTML="Formato inválido. Ej: A.carbot";
+return false;
+}
+
+// Si todo es correcto
+return true;
+}
+
+</script>
+</head>
+
+<body>
+
+<h1>Validar Formulario</h1>
+
+<hr><h3>Datos de identificación</h3>
+
+<div class="caja">
+
+<form onsubmit="return validar()">
+
+Usuario:
+<input type="text" id="usuario">
+<span id="errorUsuario" class="error"></span>
+<br><br>
+
+Contraseña:
+<input type="password" id="pass">
+<span id="errorPass" class="error"></span>
+<br><br>
+
+<input type="submit" value="Enviar">
+
+</form>
+</div>
+<hr><p>Validación de formulario realizado por: Martina Pérez Muñoz</p>
+</body>
+</html>

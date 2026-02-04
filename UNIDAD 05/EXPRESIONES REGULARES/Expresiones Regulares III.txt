@@ -1,0 +1,60 @@
+1.Valida si una cadena contiene solo números enteros positivos (sin signos ni decimales).
+
+^\d+$
+
+2.Valida si una cadena contiene un número entero, que puede ser positivo o negativo.
+
+^-?\d+$
+
+3.Verifica si una dirección de correo tiene el formato básico nombre@dominio.ext.
+
+^\w+@\w+\.\w{2,}$
+
+4.Verifica si una fecha sigue el formato día/mes/año
+
+^\d{2}/\d{2}/\d{4}$
+
+5.Verifica que el nombre de usuario contenga de 4 a 16 caracteres alfanuméricos
+
+^\w{4,16}$
+
+---
+
+1. Validar contraseñas fuertes:
+La contraseña debe cumplir con los siguientes requisitos:
+• Al menos 8 caracteres.
+• Al menos una letra mayúscula.
+• Al menos una letra minúscula.
+• Al menos un número.
+
+
+
+^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$
+
+
+
+2.Verifica si una cadena es una URL válida
+
+
+^https?://\w+(\.\w+)+$
+
+
+
+3. Verifica si una cadena es una dirección IPv4 válida
+
+
+^\b(?:\d{1,3}\.){3}\d{1,3}\b$
+
+
+
+4.Verifica si una cadena tiene exactamente 5 dígitos
+
+
+^\d{5}$
+
+
+
+5.Valida si una cadena contiene un número decimal positivo o negativo
+
+
+^-?\d*\.?\d+$

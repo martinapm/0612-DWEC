@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7 - Temporizador con doble clic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #contador {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #333;
+        }
+        .instrucciones {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 7: Temporizador con doble clic</h1>
+    <p class="instrucciones">Haz doble clic para iniciar el temporizador, clic derecho para detenerlo</p>
+    <button id="botonTemporizador">Control de Temporizador</button>
+    <div id="contador">0</div>
+    
+    <script>
+        const boton = document.getElementById('botonTemporizador');
+        const contador = document.getElementById('contador');
+        let temporizador;
+        let cuenta = 0;
+        
+        boton.addEventListener('dblclick', function() {
+            if (temporizador) clearInterval(temporizador);
+            cuenta = 0;
+            contador.textContent = cuenta;
+            temporizador = setInterval(function() {
+                cuenta++;
+                contador.textContent = cuenta;
+            }, 1000);
+        });
+        
+        boton.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+            clearInterval(temporizador);
+        });
+    </script>
+</body>
+</html>

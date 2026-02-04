@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11 - Teclas especiales</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        #mensaje {
+            font-size: 24px;
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px dashed #333;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 400px;
+            margin: 30px auto;
+        }
+        .instrucciones {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 11: Teclas especiales</h1>
+    <p class="instrucciones">Presiona una tecla en tu teclado</p>
+    <div id="mensaje">Presiona Enter, Escape o cualquier otra tecla</div>
+    
+    <script>
+        const mensaje = document.getElementById('mensaje');
+        
+        document.addEventListener('keydown', function(event) {
+            const tecla = event.key;
+            
+            if (tecla === 'Enter') {
+                mensaje.textContent = 'Confirmado!';
+                mensaje.style.backgroundColor = '#d0ffd0';
+            } else if (tecla === 'Escape') {
+                mensaje.textContent = 'Cancelado!';
+                mensaje.style.backgroundColor = '#ffd0d0';
+            } else {
+                mensaje.textContent = `Presionaste: "${tecla}"`;
+                mensaje.style.backgroundColor = '#f0f0f0';
+            }
+        });
+    </script>
+</body>
+</html>

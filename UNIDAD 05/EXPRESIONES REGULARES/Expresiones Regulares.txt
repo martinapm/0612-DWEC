@@ -1,0 +1,242 @@
+1. Escribe una expresión regular para encontrar todas las ocurrencias de la palabra "casa" en un texto. Asegúrate de que distinga entre "casa" y partes de palabras como "casar"
+
+
+\bcasa\b
+
+
+2. Encuentra todos los números de 3 dígitos en un texto
+
+
+\b\d{3}\b
+
+
+3. Escribe una expresión regular para extraer todas las direcciones de correo electrónico que estén en formato simple, como usuario@dominio.com
+
+
+\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b
+
+
+\w. @ \w
+
+
+4. Encuentra todas las palabras que empiecen con una letra mayúscula en un texto
+
+
+
+\b[A-Z][a-z]*\b
+
+
+5. Escribe una expresión regular que convierta múltiples espacios consecutivos en un único espacio
+
+
+\s+
+
+
+\s{2,}/;
+
+
+6. Encuentra números de teléfono en formato (123) 456-7890 o 123-456-789
+
+
+\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}
+
+
+7. Escribe una expresión regular para encontrar códigos postales en formato de 5 dígitos o 5 dígitos seguidos de un guión y 4 dígitos (e.g., 12345-6789)
+
+
+\b\d{5}(?:-\d{4})?\b
+
+
+8. Encuentra todas las URLs en un texto. Considera que las URLs pueden comenzar con http://, https://, o simplemente www..
+
+
+https?:// [^\s]+`www.\[^\s]+
+
+
+
+9. Encuentra todas las palabras que tengan exactamente 5 caracteres
+
+\b\w{5}\b
+
+
+
+
+10. Escribe una expresión regular para encontrar fechas en formato dd/mm/aaaa o mm-dd-aaaa
+
+\d{2}/\d{2}/\d{4}|\d{2}-\d{2}-\d{4}
+
+
+
+11.Encuentra todas las palabras que terminen en “ción” en un texto, como “información”, “nación”,
+etc
+
+
+\b\w+ción\b
+
+
+12.Escribe una expresión regular para encontrar todas las direcciones IP válidas en un texto
+(formato 0-255.0-255.0-255.0-255)
+
+
+\b[0-255]-[0-255]-[0-255]\b
+
+13. Encuentra nombres completos en un texto que tengan el formato “Nombre Apellido”, donde
+ambos comiencen con letra mayúscula
+
+
+\b[A-Z][a-z]+\s[A-Z][a-z]+\b
+
+
+14.Encuentra todas las frases que estén entre comillas dobles (" ") en un texto
+
+"[^"]+"
+
+
+15.Escribe una expresión regular para identificar números decimales en un texto (e.g., 3.14, 0.001,
+-123.45)
+
+
+\d+\.\d+ (buscar el negativo)
+
+
+16. Identifica las palabras que se repiten consecutivamente en un texto, como “hola hola” o
+“buenos buenos días”.
+
+(\w+)\s\1
+
+/\b/\w+)\s+\1\b/
+17.Encuentra todas las palabras que empiecen con a y terminen con o, como “anillo” o “apoyo”.
+
+
+\ba\w+o\b
+
+
+18.Escribe una expresión regular que elimine etiquetas específicas de HTML, como <div> y
+</div>.
+
+
+</?div>
+
+
+19. Encuentra nombres de usuario que cumplan las siguientes reglas:
+• Deben tener entre 4 y 12 caracteres.
+• Pueden contener letras, números y guiones bajos.
+• No pueden empezar con un número.
+
+
+^[A-Za-z_]\w{3,11}$
+
+
+
+20.Encuentra números que estén en formato fraccionario, como 3/4, 10/3, o 1/2.
+
+
+\b\d+/\d+\b
+
+
+
+21.Identifica todos los hashtags en un texto, es decir, palabras que comiencen con # seguidas de
+letras, números o guiones bajos (e.g., #Amor, #2023Meta).
+
+
+
+#\w+
+
+
+
+22.Encuentra todas las palabras que no contengan la letra e.
+
+
+\b[^e\s]+\b
+
+
+23.Encuentra todo el texto que esté dentro de paréntesis, como en (este texto) o (otro ejemplo).
+
+
+\([^)]*\)
+
+
+
+24.Escribe una expresión regular que pueda identificar fechas en los formatos:
+• dd/mm/aaaa
+• mm-dd-aaaa
+• aaaa.mm.dd
+
+
+
+\d{2}/\d{2}/\d{4}|\d{2}-\d{2}-\d{4}|\d{4}\.\d{2}\.\d{2}
+
+
+
+
+25.Encuentra todas las combinaciones que consistan en tres letras seguidas de tres números,
+como abc123 o XYZ456.
+
+
+[A-Za-z]{3}\d{3}
+
+---
+Bloque III
+---
+1.Valida si una cadena contiene solo números enteros positivos (sin signos ni decimales).
+
+^\d+$
+
+2.Valida si una cadena contiene un número entero, que puede ser positivo o negativo.
+
+^-?\d+$
+
+3.Verifica si una dirección de correo tiene el formato básico nombre@dominio.ext.
+
+^\w+@\w+\.\w{2,}$
+
+4.Verifica si una fecha sigue el formato día/mes/año
+
+^\d{2}/\d{2}/\d{4}$
+
+5.Verifica que el nombre de usuario contenga de 4 a 16 caracteres alfanuméricos
+
+^\w{4,16}$
+
+---
+
+1. Validar contraseñas fuertes:
+La contraseña debe cumplir con los siguientes requisitos:
+• Al menos 8 caracteres.
+• Al menos una letra mayúscula.
+• Al menos una letra minúscula.
+• Al menos un número.
+
+
+
+^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$
+
+
+
+2.Verifica si una cadena es una URL válida
+
+
+^https?://\w+(\.\w+)+$
+
+
+
+3. Verifica si una cadena es una dirección IPv4 válida
+
+
+^\b(?:\d{1,3}\.){3}\d{1,3}\b$
+
+
+
+4.Verifica si una cadena tiene exactamente 5 dígitos
+
+
+^\d{5}$
+
+
+
+5.Valida si una cadena contiene un número decimal positivo o negativo
+
+
+^-?\d*\.?\d+$
+
+

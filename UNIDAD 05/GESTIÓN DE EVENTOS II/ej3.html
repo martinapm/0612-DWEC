@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Mostrar mensaje al presionar tecla</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            min-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 3: Mostrar mensaje al presionar una tecla</h1>
+    <p>Escribe algo en el campo de texto:</p>
+    <input type="text" id="entrada" placeholder="Escribe aquí...">
+    <div id="resultado"></div>
+    
+    <script>
+        const entrada = document.getElementById('entrada');
+        const resultado = document.getElementById('resultado');
+        
+        entrada.addEventListener('keyup', function() {
+            resultado.textContent = `Texto ingresado: ${entrada.value}`;
+        });
+    </script>
+</body>
+</html>

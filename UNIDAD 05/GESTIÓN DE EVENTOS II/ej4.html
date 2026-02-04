@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4 - Contador de clics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #contador {
+            font-size: 18px;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+        .contenedor {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 4: Contador de clics</h1>
+    <div class="contenedor">
+        <button id="botonContador">Haz clic aquí</button>
+        <span id="contador">0 clics</span>
+    </div>
+    
+    <script>
+        const boton = document.getElementById('botonContador');
+        const contador = document.getElementById('contador');
+        let cuenta = 0;
+        
+        boton.addEventListener('click', function() {
+            cuenta++;
+            contador.textContent = `${cuenta} clic${cuenta !== 1 ? 's' : ''}`;
+        });
+    </script>
+</body>
+</html>

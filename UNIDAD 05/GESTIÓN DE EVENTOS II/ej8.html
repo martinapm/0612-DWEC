@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8 - Validación de formulario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        form {
+            width: 300px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        .mensaje-error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+            min-height: 20px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 8: Validación de formulario</h1>
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre">
+        <div id="errorNombre" class="mensaje-error"></div>
+        
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo">
+        <div id="errorCorreo" class="mensaje-error"></div>
+        
+        <button type="submit">Enviar</button>
+    </form>
+    
+    <script>
+        const formulario = document.getElementById('miFormulario');
+        const nombre = document.getElementById('nombre');
+        const correo = document.getElementById('correo');
+        const errorNombre = document.getElementById('errorNombre');
+        const errorCorreo = document.getElementById('errorCorreo');
+        
+        nombre.addEventListener('input', function() {
+            if (nombre.value.trim() === '') {
+                errorNombre.textContent = 'El nombre no puede estar vacío';
+            } else {
+                errorNombre.textContent = '';
+            }
+        });
+        
+        correo.addEventListener('blur', function() {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (correo.value.trim() === '') {
+                errorCorreo.textContent = 'El correo no puede estar vacío';
+            } else if (!emailRegex.test(correo.value)) {
+                errorCorreo.textContent = 'Formato de correo no válido';
+            } else {
+                errorCorreo.textContent = '';
+            }
+        });
+        
+        formulario.addEventListener('submit', function(event) {
+            let hayErrores = false;
+            
+            if (nombre.value.trim() === '') {
+                errorNombre.textContent = 'El nombre no puede estar vacío';
+                hayErrores = true;
+            }
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (correo.value.trim() === '') {
+                errorCorreo.textContent = 'El correo no puede estar vacío';
+                hayErrores = true;
+            } else if (!emailRegex.test(correo.value)) {
+                errorCorreo.textContent = 'Formato de correo no válido';
+                hayErrores = true;
+            }
+            
+            if (hayErrores) {
+                event.preventDefault();
+                alert('Por favor, corrige los errores en el formulario');
+            } else {
+                alert('Formulario enviado correctamente');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9 - Lista de tareas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        #entradaTarea {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #listaTareas {
+            list-style-type: none;
+            padding: 0;
+            width: 400px;
+            margin: 20px auto;
+            text-align: left;
+        }
+        #listaTareas li {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #listaTareas li:hover {
+            background-color: #e0e0e0;
+        }
+        .completada {
+            text-decoration: line-through;
+            color: #888;
+            background-color: #d0ffd0 !important;
+        }
+        .contenedor-input {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 9: Lista de tareas</h1>
+    <div class="contenedor-input">
+        <input type="text" id="entradaTarea" placeholder="Escribe una nueva tarea...">
+        <button id="botonAgregar">Añadir tarea</button>
+    </div>
+    <ul id="listaTareas"></ul>
+    
+    <script>
+        const entradaTarea = document.getElementById('entradaTarea');
+        const botonAgregar = document.getElementById('botonAgregar');
+        const listaTareas = document.getElementById('listaTareas');
+        
+        function agregarTarea() {
+            const texto = entradaTarea.value.trim();
+            if (texto === '') {
+                alert('Por favor, escribe una tarea');
+                return;
+            }
+            
+            const nuevaTarea = document.createElement('li');
+            nuevaTarea.textContent = texto;
+            
+            nuevaTarea.addEventListener('click', function() {
+                this.classList.toggle('completada');
+            });
+            
+            listaTareas.appendChild(nuevaTarea);
+            entradaTarea.value = '';
+            entradaTarea.focus();
+        }
+        
+        botonAgregar.addEventListener('click', agregarTarea);
+        
+        entradaTarea.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                agregarTarea();
+            }
+        });
+    </script>
+</body>
+</html>
