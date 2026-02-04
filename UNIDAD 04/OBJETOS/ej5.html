@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const cuentaBancaria = {
+            titular: "Martina",
+            saldo: 0,
+
+            ingresar(cantidad) {
+                this.saldo += cantidad;
+            },
+
+            retirar (cantidad) {
+                if (this.saldo >= cantidad) {
+                    this.saldo -= cantidad;
+                }
+            },
+
+            mostrarSaldo() {
+                console.log("Saldo:", this.saldo);
+            }
+        };
+        cuentaBancaria.ingresar(100);
+        cuentaBancaria.retirar(30);
+        cuentaBancaria.mostrarSaldo();
+        
+    </script>
+
+</body>
+</html>

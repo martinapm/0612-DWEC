@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        function esEntero(n){
+            return Number.IsInteger(n)&& n > 0;
+        }
+
+        let N;
+        do {
+            N = Number(prompt("Introduzca array"));
+            if(!esEntero(N)) alert("Error, no puede estar vacío");
+        } while (!esEntero(N));
+
+        let numeros = [];
+        for(let a = 0; a < N; a++){
+            let num;
+
+            do {
+                num = Number(prompt("Introduzca el número positivo: "));
+                if(!esEntero(num))alert("Error");
+            } while (!esEntero(num));
+                numeros.push(num);
+        }
+
+                numeros.sort((a,b) => a - b );
+                console.log("Array ordenado", numeros);
+    </script>
+
+</body>
+</html>

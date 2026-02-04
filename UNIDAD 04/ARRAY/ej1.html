@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function sumaVecinos(matriz) {
+            let filas = matriz.length;
+            let columnas = matriz[0].length;
+            let resultado = [];
+
+            for (let i = 0; i < filas; i++) {                //recorremos filas
+                resultado[i] = [];                          //inicializamos fila 
+                for (let j = 0; j < columnas; j++) {       //recorremos columnas
+
+                    let suma = 0; 
+
+                    // arriba
+                    if (i > 0) suma += matriz[i - 1][j];
+                    // abajo
+                    if (i < filas - 1) suma += matriz[i + 1][j];
+                    // izquierda
+                    if (j > 0) suma += matriz[i][j - 1];
+                    // derecha
+                    if (j < columnas - 1) suma += matriz[i][j + 1];
+
+                    resultado[i][j] = suma;
+                }
+            }
+            return resultado;
+        }
+
+        console.log("1. Suma de vecinos:", 
+            sumaVecinos([
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ])
+        );
+
+
+    </script>
+</body>
+</html>

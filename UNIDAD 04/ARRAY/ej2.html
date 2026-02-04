@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function numerosUnicos(array) {
+            return array.filter(num => array.indexOf(num) === array.lastIndexOf(num)); //filtramos para que solo devuelvan un solo número
+        }
+
+        console.log("2. Números únicos:",
+            numerosUnicos([1, 2, 2, 3, 4, 4, 5])
+        );
+    </script>
+</body>
+</html> 

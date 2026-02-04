@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                //decodifica menos caracteres especiales
+    let urlCodificada = "https://ejemplo.com/pagina?nombre=Martina%20Perez";
+    let urlDecodificada = decodeURI(urlCodificada);   
+        console.log("decodeURI:", urlDecodificada);
+
+                //decodifica los caracteres especiales
+    let componenteCodificado = "Martina%20P%C3%A9rez%20%26%20Asociados";
+        console.log("decodeURIComponent:", decodeURIComponent(componenteCodificado));
+
+                //codifica la URL menos caracteres especiales
+     let url = "https://ejemplo.com/pagina nueva?dato=sí";
+        console.log("encodeURI:", encodeURI(url));
+
+                //codifica caracteres especiales
+    console.log("escape:", escape("Hola mundo @ prueba"));
+
+                //descodifica los caracteres especiales
+    console.log("unescape:", unescape("Hola%20mundo%20%40%20prueba"));
+
+                //evalúa una cadena como código
+     let expresion = "2 + 3 * 5";
+        console.log("eval:", eval(expresion));
+
+                //comprueba si el valor introducido es infinito o no
+    console.log("isFinite(10):", isFinite(10));
+    console.log("isFinite(Infinity):", isFinite(Infinity));
+    
+                //comprueba si un valor es númerico o no
+    console.log("isNaN('hola'):", isNaN("hola"));
+    console.log("isNaN(25):", isNaN(25));
+
+                //convierte un valor objeto a númerico
+    console.log("Number('123'):", Number("123"));
+
+                //convierte un valor cadena a un número entero
+    console.log("parseInt('42px'):", parseInt("42px"));
+
+                //convierte un valor cadena a número real
+    console.log("parseFloat('3.14 metros'):", parseFloat("3.14 metros"));
+
+                //representa el número infinito
+    console.log("Infinity:", Infinity);
+      
+                //valor que no es numérico
+    console.log("NaN:", NaN);
+    
+                //indica que la variable no se le ha asignado un valor
+    let variableSinValor;
+    console.log("undefined:", variableSinValor);
+
+
+</script>
+</body>
+</html>

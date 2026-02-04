@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function rotarMatriz90(matriz) {
+            let n = matriz.length;
+            let nueva = [];
+
+            for (let i = 0; i < n; i++) {                             //recorremos filas
+                nueva[i] = [];                                       //inicializamos fila
+                for (let j = 0; j < n; j++) {                       //recorremos columnas
+                    nueva[i][j] = matriz[n - j - 1][i];            //asignamos valor rotado
+                }
+            }
+            return nueva;                                        //devolvemos la nueva matriz rotada
+        }
+
+        console.log("3. Matriz rotada 90°:",
+            rotarMatriz90([
+                [1, 2, 3],
+                [4, 5, 6],
+                [7, 8, 9]
+            ])
+        );
+
+    </script>
+</body>
+</html>
